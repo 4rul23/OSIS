@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbarscrolled {
+  @apply bg-white bg-opacity-35 shadow-md backdrop-blur-md;
+}
+
+.shapebg2 {
+  background-image: url("../public/shapes/Vector\ 2.svg");
+  background-size: cover;
+  background-clip: border-box;
+  background-position: top;
+}
+.shapebg1 {
+  background-image: url("../public/shapes/Vector\ 3.svg");
+  background-size: cover;
+  background-clip: border-box;
+  background-position: top;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.container {
+  @apply px-5 md:px-10;
+}
+
+.findus-link {
+  @apply block w-full bg-slate-50 py-10 capitalize;
+}
+.findus-link:not(:last-child) {
+  @apply mb-10;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
