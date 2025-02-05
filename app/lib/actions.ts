@@ -182,7 +182,7 @@ export async function AddEvent(formData: FormData) {
 
   try {
     const imageUrl = await UploadSingleImage(formData);
-    await sql`INSERT INTO events (nama, tanggal, deskripsi, foto) 
+    await sql`INSERT INTO events (nama, tanggal, deskripsi, foto)
     VALUES (${nama}, ${tanggal}, ${desc}, ${imageUrl})`;
 
     revalidatePath("/dashboard/events");
