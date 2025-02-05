@@ -67,13 +67,15 @@ export async function getPesanKetos() {
 
 export async function getIntroImage() {
   noStore();
-
   try {
-    const introImage = await sql`SELECT * FROM intropage`;
+    const introImage = await sql`SELECT * FROM intropage LIMIT 1`;
+    if (!introImage.rows[0]) {
+      return { image: '/images/intro-default.jpg' };
+    }
     return introImage.rows[0];
   } catch (err) {
     console.log(err);
-    throw new Error("failed fetch prev image");
+    return { image: '/images/intro-default.jpg' };
   }
 }
 
